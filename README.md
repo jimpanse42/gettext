@@ -46,9 +46,9 @@ ngettext("The apple is ripe", "The apples are ripe", number_of_apples)
 dgettext("errors", "Here is an error message to translate")
 ```
 
-Messages in Gettext are stored in Portable Object files (`.po`). Such files must be placed at `priv/gettext/LOCALE/LC_MESSAGES/DOMAIN.po`, where `LOCALE` is the locale and `DOMAIN` is the domain (the default domain is called `default`).
+Messages in Gettext are stored in Portable Object files (`.po`). Such files must be placed at `priv/gettext/LOCALE/DOMAIN.po`, where `LOCALE` is the locale and `DOMAIN` is the domain (the default domain is called `default`).
 
-For example, the message to `pt_BR` of the first two `*gettext` calls in the snippet above must be placed in the `priv/gettext/pt_BR/LC_MESSAGES/default.po` file with contents:
+For example, the message to `pt_BR` of the first two `*gettext` calls in the snippet above must be placed in the `priv/gettext/pt_BR/default.po` file with contents:
 
 ```pot
 msgid "Here is one string to translate"

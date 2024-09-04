@@ -72,8 +72,8 @@ This is a detailed list of the new things introduced in this release:
 
     ```bash
     mix expo.msguniq \
-      priv/gettext/LOCALE/LC_MESSAGES/DOMAIN.po \
-      --output-file priv/gettext/LOCALE/LC_MESSAGES/DOMAIN.po
+      priv/gettext/LOCALE/DOMAIN.po \
+      --output-file priv/gettext/LOCALE/DOMAIN.po
     ```
 
 ## v0.23.1
@@ -349,7 +349,7 @@ This is a detailed list of the new things introduced in this release:
 
   * Fix a bug with the `*gettext` macros, which raised an error when given
     compile-time strings in the form of `~s`/`~S` sigils.
-  * Create missing locale directories (for example, `en/LC_MESSAGES`) when
+  * Create missing locale directories (for example, `en`) when
     running the `gettext.merge` Mix task.
   * Fallback to default messages (that is, the `msgid`) when the `msgstr`
     (or one or more `msgstr` strings for plural messages) is empty.

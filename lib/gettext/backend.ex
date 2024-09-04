@@ -87,7 +87,7 @@ defmodule Gettext.Backend do
 
       gettext("Hello %{name}, your favorite color is %{color}", name: "Jane", color: "blue")
 
-  and our `it/LC_MESSAGES/default.po` looks like this:
+  and our `it/default.po` looks like this:
 
       msgid "Hello %{name}, your favorite color is %{color}"
       msgstr "Ciao %{name}, il tuo colore preferito è %{colour}" # (typo)

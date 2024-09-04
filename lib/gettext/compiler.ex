@@ -10,7 +10,7 @@ defmodule Gettext.Compiler do
 
   @default_priv "priv/gettext"
   @default_domain "default"
-  @po_wildcard "*/LC_MESSAGES/*.po"
+  @po_wildcard "*/*.po"
 
   @doc false
   def __hash__(priv) do
@@ -573,7 +573,7 @@ defmodule Gettext.Compiler do
   end
 
   defp locale_and_domain_from_path(path) do
-    [file, "LC_MESSAGES", locale | _rest] = path |> Path.split() |> Enum.reverse()
+    [file, locale | _rest] = path |> Path.split() |> Enum.reverse()
     domain = Path.rootname(file, ".po")
     {locale, domain}
   end

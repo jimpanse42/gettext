@@ -141,13 +141,12 @@ defmodule Gettext do
 
       gettext directory
       └─ locale
-         └─ LC_MESSAGES
-            ├─ domain_1.po
-            ├─ domain_2.po
-            └─ domain_3.po
+          ├─ domain_1.po
+          ├─ domain_2.po
+          └─ domain_3.po
 
   Here, `locale` is the locale of the messages (for example, `en_US`),
-  `LC_MESSAGES` is a fixed directory, and `domain_i.po` are PO files containing
+  `domain_i.po` are PO files containing
   domain-scoped messages. For more information on domains, check out the
   "Domains" section below.
 
@@ -155,13 +154,11 @@ defmodule Gettext do
 
       priv/gettext
       └─ en_US
-      |  └─ LC_MESSAGES
-      |     ├─ default.po
-      |     └─ errors.po
+      |   ├─ default.po
+      |   └─ errors.po
       └─ it
-         └─ LC_MESSAGES
-            ├─ default.po
-            └─ errors.po
+          ├─ default.po
+          └─ errors.po
 
   By default, Gettext expects messages to be stored under the `priv/gettext`
   directory of an application. This behaviour can be changed by specifying a
@@ -309,7 +306,7 @@ defmodule Gettext do
   macros (and their function counterparts) also accept a *domain* as one
   of the arguments. The domain of a message is determined by the name of the
   PO file that contains that message. For example, the domain of
-  messages in the `it/LC_MESSAGES/errors.po` file is `"errors"`, so those
+  messages in the `it/errors.po` file is `"errors"`, so those
   messages would need to be retrieved with `dgettext` or `dngettext`:
 
       dgettext("errors", "Error!")
@@ -468,7 +465,7 @@ defmodule Gettext do
 
       mix gettext.merge priv/gettext --locale pt_BR
 
-  will update all the PO files in `priv/gettext/pt_BR/LC_MESSAGES` with the new
+  will update all the PO files in `priv/gettext/pt_BR` with the new
   version of the POT files in `priv/gettext`. Read more about the merging
   process in the documentation for `mix gettext.merge`.
 

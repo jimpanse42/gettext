@@ -595,7 +595,7 @@ defmodule Gettext.MergerTest do
   @tag :tmp_dir
   test "new_po_file/2", %{tmp_dir: tmp_dir} do
     pot_path = Path.join(tmp_dir, "new_po_file.pot")
-    new_po_path = Path.join(tmp_dir, "it/LC_MESSAGES/new_po_file.po")
+    new_po_path = Path.join(tmp_dir, "it/new_po_file.po")
 
     write_file(pot_path, """
     ## Stripme!

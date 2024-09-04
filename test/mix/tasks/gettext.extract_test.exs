@@ -49,13 +49,13 @@ defmodule Mix.Tasks.Gettext.ExtractTest do
     end
     """)
 
-    write_file(context, "priv/gettext/it/LC_MESSAGES/my_domain.po", "")
+    write_file(context, "priv/gettext/it/my_domain.po", "")
 
     capture_io(fn ->
       in_project(test, tmp_dir, fn _module -> run(["--merge"]) end)
     end)
 
-    assert read_file(context, "priv/gettext/it/LC_MESSAGES/my_domain.po") == """
+    assert read_file(context, "priv/gettext/it/my_domain.po") == """
            #: lib/other.ex:3
            #, elixir-autogen, elixir-format
            msgid "other"
@@ -64,7 +64,7 @@ defmodule Mix.Tasks.Gettext.ExtractTest do
 
     capture_io(fn ->
       in_project(test, tmp_dir, fn _module -> run(["--merge"]) end)
-    end) =~ "Wrote priv/gettext/it/LC_MESSAGES/my_domain.po"
+    end) =~ "Wrote priv/gettext/it/my_domain.po"
   end
 
   test "--check-up-to-date should fail if no POT files have been created",

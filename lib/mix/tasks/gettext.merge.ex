@@ -59,7 +59,7 @@ defmodule Mix.Tasks.Gettext.Merge do
   over the first file. For example:
 
   ```bash
-  mix gettext.merge priv/gettext/en/LC_MESSAGES/default.po priv/gettext/default.pot
+  mix gettext.merge priv/gettext/en/default.po priv/gettext/default.pot
   ```
 
   If only one argument is given, then that argument must be a directory
@@ -72,7 +72,7 @@ defmodule Mix.Tasks.Gettext.Merge do
   ```
 
   If the `--locale LOCALE` option is given, then only the PO files in
-  `<DIR>/<LOCALE>/LC_MESSAGES` will be merged with the POT files in `DIR`. If no
+  `<DIR>/<LOCALE>` will be merged with the POT files in `DIR`. If no
   options are given, then all the PO files for all locales under `DIR` are
   merged with the POT files in `DIR`.
 
@@ -89,7 +89,7 @@ defmodule Mix.Tasks.Gettext.Merge do
   ## Options
 
     * `--locale` - a string representing a locale. If this is provided, then only the PO
-      files in `<DIR>/<LOCALE>/LC_MESSAGES` will be merged with the POT files in `DIR`. This
+      files in `<DIR>/<LOCALE>` will be merged with the POT files in `DIR`. This
       option can only be given when a single argument is passed to the task
       (a directory).
 
@@ -197,7 +197,7 @@ defmodule Mix.Tasks.Gettext.Merge do
   end
 
   def locale_dir(pot_dir, locale) do
-    Path.join([pot_dir, locale, "LC_MESSAGES"])
+    Path.join([pot_dir, locale])
   end
 
   defp merge_dirs(po_dir, pot_dir, locale, opts, gettext_config) do
@@ -314,7 +314,7 @@ defmodule Mix.Tasks.Gettext.Merge do
 
   defp locale_from_path(path) do
     parts = Path.split(path)
-    index = Enum.find_index(parts, &(&1 == "LC_MESSAGES"))
+    index = Enum.count(parts)
     Enum.at(parts, index - 1)
   end
 
